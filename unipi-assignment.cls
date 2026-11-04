@@ -278,9 +278,9 @@
     \end{tabular}
   \end{center}
   \vfill
-  \begin{flushright}
+  \begin{flushleft}
     Submission Date: \@submissiondate
-  \end{flushright}
+  \end{flushleft}
   \clearpage
 }
 
