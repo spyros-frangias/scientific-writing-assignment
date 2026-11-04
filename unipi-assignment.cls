@@ -92,9 +92,9 @@
 
 \titlespacing*{\section}{0pt}{18pt plus 4pt minus 2pt}{6pt plus 2pt}
 
-% Each numbered chapter starts on a new recto (odd) page
+% Each numbered chapter starts on a new page
 \let\orig@section\section
-\renewcommand{\section}{\cleardoublepage\orig@section}
+\renewcommand{\section}{\clearpage\orig@section}
 
 % --- Heading 2 (numbered): Arial Black, 11pt (default inherited), no color ---
 \titleformat{\subsection}
@@ -132,7 +132,7 @@
 
 % --- Unnumbered heading (same look as Heading 1 but no number) ---
 \newcommand{\sectionunnumbered}[1]{%
-  \cleardoublepage
+  \clearpage
   \phantomsection
   \addcontentsline{toc}{section}{#1}%
   \vspace*{18pt}%
@@ -211,25 +211,25 @@
 
 \AtBeginDocument{%
   \renewcommand{\tableofcontents}{%
-    \cleardoublepage
+    \clearpage
     \sectionunnumberednoclear{\contentsname}%
     \vspace{-6pt}%
     \@starttoc{toc}%
   }%
   \renewcommand{\listoffigures}{%
-    \cleardoublepage
+    \clearpage
     \sectionunnumberednoclear{\listfigurename}%
     \vspace{-6pt}%
     \@starttoc{lof}%
   }%
   \renewcommand{\listoftables}{%
-    \cleardoublepage
+    \clearpage
     \sectionunnumberednoclear{\listtablename}%
     \vspace{-6pt}%
     \@starttoc{lot}%
   }%
   \newcommand{\listofdiagrams}{%
-    \cleardoublepage
+    \clearpage
     \sectionunnumberednoclear{\listofdiagramname}%
     \vspace{-6pt}%
     \@starttoc{lod}%
@@ -366,19 +366,21 @@
   \par\vspace{6pt}%
   As the author of this work, I declare that this work is not a product of
   plagiarism and does not contain material from unreferenced sources.%
-  \cleardoublepage
+  \clearpage
+  \hbox{}%
+  \clearpage
 }
 
 %% ─── Front matter / Main matter ──────────────────────────────────────────
 \newcommand{\frontmatter}{%
-  \cleardoublepage
+  \clearpage
   \hypersetup{pageanchor=true}%
   \pagenumbering{roman}%
   \pagestyle{fancy}%
 }
 
 \newcommand{\mainmatter}{%
-  \cleardoublepage
+  \clearpage
   \pagenumbering{arabic}%
   \pagestyle{fancy}%
 }
