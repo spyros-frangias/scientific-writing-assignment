@@ -6,30 +6,72 @@ LaTeX template matching the University of Piraeus (UNIPI) course assignment Word
 
 ```
 latex-template/
-├── main.tex                 # Main document — edit this
+├── main.tex                 # Main document orchestrator
 ├── unipi-assignment.cls     # Document class (formatting rules)
 ├── .latexmkrc               # latexmk configuration
+├── references.bib           # BibTeX bibliography
 ├── images/
 │   ├── unipi-logo.png       # University logo (extracted from .docx)
 │   └── example-image.png    # Placeholder image (replace with your own)
+├── sections/                # Modular sections & subsections
+│   ├── abstract/
+│   │   └── abstract.tex
+│   ├── introduction/
+│   │   └── introduction.tex
+│   ├── section-1/
+│   │   ├── section-1.tex
+│   │   ├── subsection-1.tex
+│   │   ├── subsection-2.tex
+│   │   └── subsection-3.tex
+│   ├── section-2/
+│   │   ├── section-2.tex
+│   │   ├── subsection-1.tex
+│   │   ├── subsection-2.tex
+│   │   └── subsection-3.tex
+│   ├── section-3/
+│   │   ├── section-3.tex
+│   │   ├── subsection-1.tex
+│   │   ├── subsection-2.tex
+│   │   └── subsection-3.tex
+│   ├── section-4/
+│   │   ├── section-4.tex
+│   │   ├── subsection-1.tex
+│   │   ├── subsection-2.tex
+│   │   └── subsection-3.tex
+│   ├── conclusions/
+│   │   └── conclusions.tex
+│   └── appendices/
+│       ├── appendices.tex
+│       ├── appendix-a.tex
+│       └── appendix-b.tex
 └── README.md
 ```
 
 ## Compilation
 
-Run **twice** (for TOC, cross-references, etc.):
+All build artifacts are directed to a `build/` directory to keep the root directory clean.
+
+### Using pdflatex + bibtex
 
 ```bash
-cd latex-template
-pdflatex main.tex
-pdflatex main.tex
+mkdir -p build
+pdflatex -interaction=nonstopmode -output-directory=build main.tex
+bibtex build/main
+pdflatex -interaction=nonstopmode -output-directory=build main.tex
+pdflatex -interaction=nonstopmode -output-directory=build main.tex
 ```
 
-Or use `latexmk` (handles multiple passes automatically):
+### Using latexmk
+
+`latexmk` reads `.latexmkrc` and automatically outputs to `build/` with all passes handled:
 
 ```bash
 latexmk main.tex
 ```
+
+### Using VS Code
+
+The LaTeX Workshop extension is preconfigured in `.vscode/settings.json` to build directly into `build/` and view the PDF in a tab viewer.
 
 ## Formatting Summary
 
