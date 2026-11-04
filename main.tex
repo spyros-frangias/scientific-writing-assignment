@@ -89,13 +89,13 @@
 Recommended reference citation formats:
 
 \begin{indented}
-  Journals: See reference [1]
+  Journals: See reference~\cite{wu2004}
 
-  Books and monographs: See reference [2]
+  Books and monographs: See reference~\cite{levenspiel2002}
 
-  Conference proceedings: See reference [3]
+  Conference proceedings: See reference~\cite{bock1984}
 
-  Multi-author texts: See reference [4]
+  Multi-author texts: See reference~\cite{deuflhard1987}
 \end{indented}
 
 % ─── Main Matter (arabic numerals, starting from 1) ────────────────────
@@ -324,25 +324,8 @@ Recommended reference citation formats:
 % ═══════════════════════════════════════════════════════════════════════
 % BIBLIOGRAPHY (unnumbered)
 % ═══════════════════════════════════════════════════════════════════════
-\sectionunnumbered{Bibliography}
-
-\begin{enumerate}[label={[\arabic*]}, leftmargin=2em, itemsep=2pt]
-  \item Wu, X. C., Michael, G. A., \& Rayford, G. A. (2004). Methanol
-        conversion on SAPO-34: Reaction condition for fixed-bed reactor.
-        \textit{Applied Catalysis A: General}, 260, 63--69.
-
-  \item Levenspiel, O. (2002). \textit{Chemical reaction engineering}.
-        New York, U.S.A: John Wiley \& Sons, Inc.
-
-  \item Bock, H., \& Plitt, K.-J. (1984). A multiple shooting algorithm
-        for direct solution of optimal control problems. \textit{Proceedings
-        of the 9th IFAC World Congress}. Budapest: Pergamon Press, 274--279.
-
-  \item Deuflhard, P., \& Nowak, U. (1987). Extrapolation integrators for
-        quasilinear implicit ODEs. In P.~Deuflhard, \& B.~Enquist (Eds.),
-        \textit{Large Scale Scientific Computing NATO-ASI Series}
-        (pp.~37--50). Basel: Birkh\"auser.
-\end{enumerate}
+\bibliographystyle{unsrt}
+\bibliography{references}
 
 
 % ═══════════════════════════════════════════════════════════════════════
