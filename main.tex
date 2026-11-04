@@ -36,20 +36,7 @@
 \makecopyrightpage
 
 % --- Abstract ---
-\sectionunnumbered{Abstract}
-
-\begin{indented}
-  % Write your abstract here. The abstract should summarize the main
-  % objectives, methods, results, and conclusions of the paper in a
-  % concise manner. It typically ranges from 150 to 300 words.
-\end{indented}
-
-\vspace{6pt}
-{\itshape\color{heading1color}Keywords:\/} keyword1, keyword2, keyword3
-
-\clearpage
-\hbox{}%
-\clearpage
+\input{sections/abstract/abstract}
 
 % --- Table of Contents ---
 \tableofcontents
@@ -75,240 +62,32 @@
 \mainmatter
 
 % --- Introduction ---
-\sectionunnumbered{Introduction}
-
-Recommended reference citation formats:
-
-\begin{indented}
-  Journals: See reference~\cite{wu2004}
-
-  Books and monographs: See reference~\cite{levenspiel2002}
-
-  Conference proceedings: See reference~\cite{bock1984}
-
-  Multi-author texts: See reference~\cite{deuflhard1987}
-\end{indented}
+\input{sections/introduction/introduction}
 
 % ═══════════════════════════════════════════════════════════════════════
 % CHAPTER 1
 % ═══════════════════════════════════════════════════════════════════════
-\section{Chapter Title}
-\section{Chapter Title}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsection{Subchapter Title}
-
-\begin{indented}
-  % Body text with indentation goes here
-\end{indented}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-% Example: figure within text
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your image
-  \caption{Description of the first figure of the first chapter.}
-  \label{fig:1.1}
-\end{figure}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
+\input{sections/section-1/section-1}
 
 % ═══════════════════════════════════════════════════════════════════════
 % CHAPTER 2
 % ═══════════════════════════════════════════════════════════════════════
-\section{Chapter Title}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsection{Subchapter Title}
-
-\begin{indented}
-  % Body text with indentation
-\end{indented}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-% Example: figure
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your image
-  \caption{Description of the first figure of the second chapter.}
-  \label{fig:2.1}
-\end{figure}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
+\input{sections/section-2/section-2}
 
 % ═══════════════════════════════════════════════════════════════════════
 % CHAPTER 3
 % ═══════════════════════════════════════════════════════════════════════
-\section{Chapter Title}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsection{Subchapter Title}
-
-\begin{indented}
-  % Body text with indentation
-\end{indented}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-% Example: figure
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your image
-  \caption{Description of the first figure of the third chapter.}
-  \label{fig:3.1}
-\end{figure}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
+\input{sections/section-3/section-3}
 
 % ═══════════════════════════════════════════════════════════════════════
 % CHAPTER 4
 % ═══════════════════════════════════════════════════════════════════════
-\section{Chapter Title}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-\subsection{Subchapter Title}
-
-\begin{indented}
-  % Body text with indentation
-\end{indented}
-
-\subsubsection{Title \ldots}
-
-% Example: diagram (custom float)
-\begin{diagram}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your diagram
-  \caption{First diagram}
-  \label{diag:4.1}
-\end{diagram}
-
-\subsubsection{Title \ldots}
-
-% Example: data table
-\begin{table}[htbp]
-  \centering
-  \caption{First table}
-  \label{tab:4.1}
-  \begin{tabular}{lccc}
-    \toprule
-    \textbf{Type} & \textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3} \\
-    \midrule
-    A & 0.93 & 1.28 & 2.47 \\
-    B & 0.82 & 1.39 & 2.89 \\
-    C & 0.75 & 1.32 & 3.14 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\subsubsection{Title \ldots}
-
-\begin{indented}
-  % Body text with indentation
-\end{indented}
-
-\subsection{Subchapter Title}
-
-\subsubsection{Title \ldots}
-
-\subsubsection{Title \ldots}
-
-% Example: second diagram
-\begin{diagram}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your diagram
-  \caption{Second diagram}
-  \label{diag:4.2}
-\end{diagram}
-
-\subsubsection{Title \ldots}
-
-% Example: second data table
-\begin{table}[htbp]
-  \centering
-  \caption{Second table}
-  \label{tab:4.2}
-  \begin{tabular}{lccc}
-    \toprule
-    \textbf{Type} & \textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3} \\
-    \midrule
-    A & 0.93 & 1.28 & 2.47 \\
-    B & 0.82 & 1.39 & 2.89 \\
-    C & 0.75 & 1.32 & 3.14 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
+\input{sections/section-4/section-4}
 
 % ═══════════════════════════════════════════════════════════════════════
 % CONCLUSIONS (unnumbered)
 % ═══════════════════════════════════════════════════════════════════════
-\sectionunnumbered{Conclusions}
-
-% Write your conclusions here.
-
+\input{sections/conclusions/conclusions}
 
 % ═══════════════════════════════════════════════════════════════════════
 % BIBLIOGRAPHY (unnumbered)
@@ -316,19 +95,9 @@ Recommended reference citation formats:
 \bibliographystyle{unsrt}
 \bibliography{references}
 
-
 % ═══════════════════════════════════════════════════════════════════════
 % APPENDICES (unnumbered section header, then lettered appendices)
 % ═══════════════════════════════════════════════════════════════════════
-\sectionunnumbered{Appendices}
-
-\makeappendixheading{}
-
-% Content of Appendix A
-
-\makeappendixheading{}
-
-% Content of Appendix B
-
+\input{sections/appendices/appendices}
 
 \end{document}
