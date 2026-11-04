@@ -246,41 +246,46 @@
 \newcommand{\submissiondate}[1]{\renewcommand{\@submissiondate}{#1}}
 
 \newcommand{\maketitlepage}{%
+  \hypersetup{pageanchor=false}%
   \thispagestyle{empty}%
   \begin{center}
     \vspace*{-0.5cm}%
-    \includegraphics[height=3.5cm]{images/unipi-logo.png}%
+    \includegraphics[height=2.25cm]{images/unipi-logo.png}%
     \par\vspace{12pt}%
     {\fontsize{14}{16.8}\bfseries\selectfont \@university}%
     \par\vspace{4pt}%
-    {\fontsize{14}{16.8}\bfseries\selectfont \@school}%
+    {\fontsize{12.5}{15}\bfseries\selectfont \@school}%
     \par\vspace{4pt}%
     {\fontsize{14}{16.8}\bfseries\selectfont \@department}%
     \par\vfill%
     {\fontsize{14}{16.8}\bfseries\selectfont \@coursetitle}%
     \par\vspace{4pt}%
     {\fontsize{14}{16.8}\bfseries\selectfont \guillemotleft\@coursename\guillemotright}%
-    \par\vfill%
+    \par\vspace{1.2cm}%
   \end{center}%
   %
-  % Student info table
+  % Student info table (fitted within 15cm text margins)
   \begin{center}
-    \begin{tabular}{|p{5.4cm}|p{9.6cm}|}
+    \begin{tabular}{|p{5.0cm}|p{9.0cm}|}
       \hline
-      \textbf{Selected Topic Title} & \@essaytitle \\
+      Selected Topic Title & \@essaytitle \\
       \hline
-      \textbf{Student Name}         & \@studentname \\
+      Student Name         & \@studentname \\
       \hline
-      \textbf{Father's Name}        & \@fathername \\
+      Father's Name        & \@fathername \\
       \hline
-      \textbf{Registration Number}  & \@studentid \\
+      Registration Number  & \@studentid \\
       \hline
     \end{tabular}
   \end{center}
   \vfill
   \begin{flushleft}
-    Submission Date: \@submissiondate
+    \hspace*{0.63cm}Submission Date: \@submissiondate
   \end{flushleft}
+  \clearpage
+  \thispagestyle{empty}%
+  \hbox{}%
+  \thispagestyle{empty}%
   \clearpage
 }
 
