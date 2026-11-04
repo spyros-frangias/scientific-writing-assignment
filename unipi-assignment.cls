@@ -29,7 +29,7 @@
 \RequirePackage{bookmark}          % PDF bookmarks
 \RequirePackage{etoolbox}          % Programming tools
 \RequirePackage{calc}              % Arithmetic in lengths
-\RequirePackage{tocloft}           % TOC/LOF/LOT formatting
+\RequirePackage[titles]{tocloft}           % TOC/LOF/LOT formatting
 \RequirePackage{float}             % Float positioning
 
 %% ─── Colors (from the Word template) ──────────────────────────────────────
@@ -99,6 +99,22 @@
   {}
 
 \titlespacing*{\subsubsection}{0pt}{18pt plus 4pt minus 2pt}{6pt plus 2pt}
+
+% --- Heading 4: 11pt, #2F5496 ---
+\titleformat{\paragraph}
+  {\normalfont\fontsize{11}{13.2}\selectfont\color{heading4color}\bfseries}
+  {\theparagraph}
+  {0.5em}
+  {}
+\titlespacing*{\paragraph}{0pt}{12pt plus 2pt minus 2pt}{4pt plus 1pt}
+
+% --- Heading 5: 11pt, #2F5496, italic ---
+\titleformat{\subparagraph}
+  {\normalfont\fontsize{11}{13.2}\selectfont\color{heading4color}\itshape}
+  {\thesubparagraph}
+  {0.5em}
+  {}
+\titlespacing*{\subparagraph}{0pt}{12pt plus 2pt minus 2pt}{4pt plus 1pt}
 
 % --- Unnumbered heading (same look as Heading 1 but no number) ---
 \newcommand{\sectionunnumbered}[1]{%
@@ -172,7 +188,39 @@
 % Custom "Diagram" float type
 \newfloat{diagram}{htbp}{lod}[section]
 \floatname{diagram}{Diagram}
-\newcommand{\listofdiagrams}{\listof{diagram}{List of Diagrams}}
+\let\l@diagram\l@figure
+% Clean Front Matter lists with UniPi styling and TOC registration
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\newcommand{\listofdiagramname}{List of Diagrams}
+
+\AtBeginDocument{%
+  \renewcommand{\tableofcontents}{%
+    \cleardoublepage
+    \sectionunnumberednoclear{\contentsname}%
+    \vspace{-6pt}%
+    \@starttoc{toc}%
+  }%
+  \renewcommand{\listoffigures}{%
+    \cleardoublepage
+    \sectionunnumberednoclear{\listfigurename}%
+    \vspace{-6pt}%
+    \@starttoc{lof}%
+  }%
+  \renewcommand{\listoftables}{%
+    \cleardoublepage
+    \sectionunnumberednoclear{\listtablename}%
+    \vspace{-6pt}%
+    \@starttoc{lot}%
+  }%
+  \newcommand{\listofdiagrams}{%
+    \cleardoublepage
+    \sectionunnumberednoclear{\listofdiagramname}%
+    \vspace{-6pt}%
+    \@starttoc{lod}%
+  }%
+}
 
 %% ─── Tables styling ──────────────────────────────────────────────────────
 % Tables: top and bottom rule only, header underline, centered, no side borders
@@ -351,10 +399,10 @@
 \newcommand{\makeappendixheading}[1]{%
   \stepcounter{appendixcounter}%
   \phantomsection
-  \addcontentsline{toc}{section}{Appendix \Alph{appendixcounter}}%
+  \addcontentsline{toc}{section}{Appendix \arabic{appendixcounter}}%
   \vspace*{18pt}%
   {\normalfont\fontsize{12}{14.4}\headingfont\color{heading1color}%
-    Appendix \Alph{appendixcounter}\ifx&#1&\else: #1\fi}%
+    Appendix \arabic{appendixcounter}\ifx&#1&\else: #1\fi}%
   \par\vspace{1pt}%
   {\color{heading1color}\rule{\textwidth}{1.5pt}}%
   \par\vspace{6pt}%
