@@ -1,0 +1,362 @@
+%% main.tex — University of Piraeus Assignment Template
+%% Compile with: pdflatex main.tex (run twice for TOC/references)
+%%
+\documentclass{unipi-assignment}
+
+% ─── Additional packages ─────────────────────────────────────────────────
+\usepackage{lipsum}        % Dummy text (remove in final document)
+\usepackage{csquotes}      % Proper quoting
+
+% ─── Document metadata ───────────────────────────────────────────────────
+\doctitle{Scientific Writing in Education}       % Header left
+\docauthor{Student Name}                         % Header right
+
+% Title page fields
+\university{UNIVERSITY OF PIRAEUS}
+\school{SCHOOL OF INFORMATION AND COMMUNICATION TECHNOLOGIES}
+\department{DEPARTMENT OF INFORMATICS}
+\coursetitle{Course Assignment}
+\coursename{Scientific Writing in Education}
+\essaytitle{Title of Selected Topic}
+\studentname{Student Name}
+\fathername{Father's Name}
+\studentid{P/XXXXX}
+\submissiondate{Month Year}
+
+% ═════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+% ─── Title Page (no header/footer, no page number) ──────────────────────
+\maketitlepage
+
+% ─── Copyright Page ─────────────────────────────────────────────────────
+\makecopyrightpage
+
+% ─── Front Matter (roman numerals) ──────────────────────────────────────
+\frontmatter
+
+% --- Abstract ---
+\sectionunnumbered{Abstract}
+
+\begin{indented}
+  % Write your abstract here. The abstract should summarize the main
+  % objectives, methods, results, and conclusions of the paper in a
+  % concise manner. It typically ranges from 150 to 300 words.
+\end{indented}
+
+\vspace{6pt}
+{\itshape\color{heading1color}Keywords:\/} keyword1, keyword2, keyword3
+
+\clearpage
+
+% --- Table of Contents ---
+\sectionunnumberednoclear{Table of Contents}
+\vspace{-6pt}
+\tableofcontents
+
+\clearpage
+
+% --- List of Figures ---
+\sectionunnumbered{List of Figures}
+\vspace{-6pt}
+\makeatletter
+\@starttoc{lof}
+\makeatother
+
+\clearpage
+
+% --- List of Tables ---
+\sectionunnumbered{List of Tables}
+\vspace{-6pt}
+\makeatletter
+\@starttoc{lot}
+\makeatother
+
+\clearpage
+
+% --- List of Diagrams ---
+\sectionunnumbered{List of Diagrams}
+\vspace{-6pt}
+\makeatletter
+\@starttoc{lod}
+\makeatother
+
+\clearpage
+
+% --- Introduction ---
+\sectionunnumbered{Introduction}
+
+Recommended reference citation formats:
+
+\begin{indented}
+  Journals: See reference [1]
+
+  Books and monographs: See reference [2]
+
+  Conference proceedings: See reference [3]
+
+  Multi-author texts: See reference [4]
+\end{indented}
+
+% ─── Main Matter (arabic numerals, starting from 1) ────────────────────
+\mainmatter
+
+% ═══════════════════════════════════════════════════════════════════════
+% CHAPTER 1
+% ═══════════════════════════════════════════════════════════════════════
+\section{Chapter Title}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsection{Subchapter Title}
+
+\begin{indented}
+  % Body text with indentation goes here
+\end{indented}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+% Example: figure within text
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your image
+  \caption{Description of the first figure of the first chapter.}
+  \label{fig:1.1}
+\end{figure}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+
+% ═══════════════════════════════════════════════════════════════════════
+% CHAPTER 2
+% ═══════════════════════════════════════════════════════════════════════
+\section{Chapter Title}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsection{Subchapter Title}
+
+\begin{indented}
+  % Body text with indentation
+\end{indented}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+% Example: figure
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your image
+  \caption{Description of the first figure of the second chapter.}
+  \label{fig:2.1}
+\end{figure}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+
+% ═══════════════════════════════════════════════════════════════════════
+% CHAPTER 3
+% ═══════════════════════════════════════════════════════════════════════
+\section{Chapter Title}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsection{Subchapter Title}
+
+\begin{indented}
+  % Body text with indentation
+\end{indented}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+% Example: figure
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your image
+  \caption{Description of the first figure of the third chapter.}
+  \label{fig:3.1}
+\end{figure}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+
+% ═══════════════════════════════════════════════════════════════════════
+% CHAPTER 4
+% ═══════════════════════════════════════════════════════════════════════
+\section{Chapter Title}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+\subsection{Subchapter Title}
+
+\begin{indented}
+  % Body text with indentation
+\end{indented}
+
+\subsubsection{Title \ldots}
+
+% Example: diagram (custom float)
+\begin{diagram}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your diagram
+  \caption{First diagram}
+  \label{diag:4.1}
+\end{diagram}
+
+\subsubsection{Title \ldots}
+
+% Example: data table
+\begin{table}[htbp]
+  \centering
+  \caption{First table}
+  \label{tab:4.1}
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Type} & \textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3} \\
+    \midrule
+    A & 0.93 & 1.28 & 2.47 \\
+    B & 0.82 & 1.39 & 2.89 \\
+    C & 0.75 & 1.32 & 3.14 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Title \ldots}
+
+\begin{indented}
+  % Body text with indentation
+\end{indented}
+
+\subsection{Subchapter Title}
+
+\subsubsection{Title \ldots}
+
+\subsubsection{Title \ldots}
+
+% Example: second diagram
+\begin{diagram}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/example-image.png}% replace with your diagram
+  \caption{Second diagram}
+  \label{diag:4.2}
+\end{diagram}
+
+\subsubsection{Title \ldots}
+
+% Example: second data table
+\begin{table}[htbp]
+  \centering
+  \caption{Second table}
+  \label{tab:4.2}
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Type} & \textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3} \\
+    \midrule
+    A & 0.93 & 1.28 & 2.47 \\
+    B & 0.82 & 1.39 & 2.89 \\
+    C & 0.75 & 1.32 & 3.14 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+% ═══════════════════════════════════════════════════════════════════════
+% CONCLUSIONS (unnumbered)
+% ═══════════════════════════════════════════════════════════════════════
+\sectionunnumbered{Conclusions}
+
+% Write your conclusions here.
+
+
+% ═══════════════════════════════════════════════════════════════════════
+% BIBLIOGRAPHY (unnumbered)
+% ═══════════════════════════════════════════════════════════════════════
+\sectionunnumbered{Bibliography}
+
+\begin{enumerate}[label={[\arabic*]}, leftmargin=2em, itemsep=2pt]
+  \item Wu, X. C., Michael, G. A., \& Rayford, G. A. (2004). Methanol
+        conversion on SAPO-34: Reaction condition for fixed-bed reactor.
+        \textit{Applied Catalysis A: General}, 260, 63--69.
+
+  \item Levenspiel, O. (2002). \textit{Chemical reaction engineering}.
+        New York, U.S.A: John Wiley \& Sons, Inc.
+
+  \item Bock, H., \& Plitt, K.-J. (1984). A multiple shooting algorithm
+        for direct solution of optimal control problems. \textit{Proceedings
+        of the 9th IFAC World Congress}. Budapest: Pergamon Press, 274--279.
+
+  \item Deuflhard, P., \& Nowak, U. (1987). Extrapolation integrators for
+        quasilinear implicit ODEs. In P.~Deuflhard, \& B.~Enquist (Eds.),
+        \textit{Large Scale Scientific Computing NATO-ASI Series}
+        (pp.~37--50). Basel: Birkh\"auser.
+\end{enumerate}
+
+
+% ═══════════════════════════════════════════════════════════════════════
+% APPENDICES (unnumbered section header, then lettered appendices)
+% ═══════════════════════════════════════════════════════════════════════
+\sectionunnumbered{Appendices}
+
+\makeappendixheading{}
+
+% Content of Appendix A
+
+\makeappendixheading{}
+
+% Content of Appendix B
+
+
+\end{document}
