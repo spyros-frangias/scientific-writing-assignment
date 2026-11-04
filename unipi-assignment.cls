@@ -6,7 +6,7 @@
 \ProvidesClass{unipi-assignment}[2026/11/04 UniPi Assignment Template]
 
 %% ─── Base class ────────────────────────────────────────────────────────────
-\LoadClass[a4paper, 10pt]{article}
+\LoadClass[a4paper, 10pt, twoside]{article}
 
 %% ─── Required packages ────────────────────────────────────────────────────
 \RequirePackage[a4paper, top=3cm, bottom=3cm, left=3cm, right=3cm,
@@ -31,6 +31,16 @@
 \RequirePackage{calc}              % Arithmetic in lengths
 \RequirePackage[titles]{tocloft}           % TOC/LOF/LOT formatting
 \RequirePackage{float}             % Float positioning
+
+% Blank pages inserted for two-sided alignment retain headers and footers
+\renewcommand{\cleardoublepage}{%
+  \clearpage
+  \ifodd\c@page\else
+    \hbox{}%
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi
+  \fi
+}
 
 %% ─── Colors (from the Word template) ──────────────────────────────────────
 \definecolor{heading1color}{HTML}{2E74B5}  % Heading 1 & unnumbered headings
@@ -82,6 +92,10 @@
 
 \titlespacing*{\section}{0pt}{18pt plus 4pt minus 2pt}{6pt plus 2pt}
 
+% Each numbered chapter starts on a new recto (odd) page
+\let\orig@section\section
+\renewcommand{\section}{\cleardoublepage\orig@section}
+
 % --- Heading 2 (numbered): Arial Black, 11pt (default inherited), no color ---
 \titleformat{\subsection}
   {\normalfont\fontsize{11}{13.2}\headingfont}
@@ -118,7 +132,7 @@
 
 % --- Unnumbered heading (same look as Heading 1 but no number) ---
 \newcommand{\sectionunnumbered}[1]{%
-  \clearpage
+  \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{section}{#1}%
   \vspace*{18pt}%
@@ -230,26 +244,26 @@
 \pagestyle{fancy}
 \fancyhf{}
 
-% Header: left = document title (8pt), right = author name (8pt)
+% Header: inner = document title (8pt), outer = author name (8pt)
 \newcommand{\@doctitle}{}
 \newcommand{\@docauthor}{}
 \newcommand{\doctitle}[1]{\renewcommand{\@doctitle}{#1}}
 \newcommand{\docauthor}[1]{\renewcommand{\@docauthor}{#1}}
 
-\fancyhead[L]{\fontsize{8}{9.6}\selectfont \@doctitle}
-\fancyhead[R]{\fontsize{8}{9.6}\selectfont \@docauthor}
+\fancyhead[LO,RE]{\fontsize{8}{9.6}\selectfont \@doctitle}
+\fancyhead[RO,LE]{\fontsize{8}{9.6}\selectfont \@docauthor}
 \renewcommand{\headrulewidth}{0pt}
 
-% Footer: right = page number (8pt)
-\fancyfoot[R]{\fontsize{8}{9.6}\selectfont \thepage}
+% Footer: outer = page number (8pt)
+\fancyfoot[RO,LE]{\fontsize{8}{9.6}\selectfont \thepage}
 \renewcommand{\footrulewidth}{0pt}
 
 % Plain page style (for first page of sections, TOC, etc.)
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyhead[L]{\fontsize{8}{9.6}\selectfont \@doctitle}%
-  \fancyhead[R]{\fontsize{8}{9.6}\selectfont \@docauthor}%
-  \fancyfoot[R]{\fontsize{8}{9.6}\selectfont \thepage}%
+  \fancyhead[LO,RE]{\fontsize{8}{9.6}\selectfont \@doctitle}%
+  \fancyhead[RO,LE]{\fontsize{8}{9.6}\selectfont \@docauthor}%
+  \fancyfoot[RO,LE]{\fontsize{8}{9.6}\selectfont \thepage}%
   \renewcommand{\headrulewidth}{0pt}%
   \renewcommand{\footrulewidth}{0pt}%
 }
@@ -352,7 +366,7 @@
   \par\vspace{6pt}%
   As the author of this work, I declare that this work is not a product of
   plagiarism and does not contain material from unreferenced sources.%
-  \clearpage
+  \cleardoublepage
 }
 
 %% ─── Front matter / Main matter ──────────────────────────────────────────
