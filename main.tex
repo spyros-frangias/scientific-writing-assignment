@@ -29,11 +29,11 @@
 % ─── Title Page (no header/footer, no page number) ──────────────────────
 \maketitlepage
 
-% ─── Copyright Page ─────────────────────────────────────────────────────
-\makecopyrightpage
-
-% ─── Front Matter (roman numerals) ──────────────────────────────────────
+% ─── Front Matter (roman numerals start at copyright) ───────────────────
 \frontmatter
+
+% ─── Copyright Page (header + footer, roman numerals) ───────────────────
+\makecopyrightpage
 
 % --- Abstract ---
 \sectionunnumbered{Abstract}
@@ -50,38 +50,27 @@
 \clearpage
 
 % --- Table of Contents ---
-\sectionunnumberednoclear{Table of Contents}
-\vspace{-6pt}
 \tableofcontents
 
 \clearpage
 
 % --- List of Figures ---
-\sectionunnumbered{List of Figures}
-\vspace{-6pt}
-\makeatletter
-\@starttoc{lof}
-\makeatother
+\listoffigures
 
 \clearpage
 
 % --- List of Tables ---
-\sectionunnumbered{List of Tables}
-\vspace{-6pt}
-\makeatletter
-\@starttoc{lot}
-\makeatother
+\listoftables
 
 \clearpage
 
 % --- List of Diagrams ---
-\sectionunnumbered{List of Diagrams}
-\vspace{-6pt}
-\makeatletter
-\@starttoc{lod}
-\makeatother
+\listofdiagrams
 
 \clearpage
+
+% ─── Main Matter (arabic numerals, starting from 1) ────────────────────
+\mainmatter
 
 % --- Introduction ---
 \sectionunnumbered{Introduction}
@@ -97,9 +86,6 @@ Recommended reference citation formats:
 
   Multi-author texts: See reference~\cite{deuflhard1987}
 \end{indented}
-
-% ─── Main Matter (arabic numerals, starting from 1) ────────────────────
-\mainmatter
 
 % ═══════════════════════════════════════════════════════════════════════
 % CHAPTER 1

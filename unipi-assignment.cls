@@ -25,7 +25,7 @@
 \RequirePackage{setspace}          % Line spacing
 \RequirePackage{parskip}           % Paragraph spacing (no indent by default)
 \RequirePackage{enumitem}          % List formatting
-\RequirePackage{hyperref}          % Hyperlinks
+\RequirePackage[pdfpagelabels=true,plainpages=false]{hyperref}          % Hyperlinks
 \RequirePackage{bookmark}          % PDF bookmarks
 \RequirePackage{etoolbox}          % Programming tools
 \RequirePackage{calc}              % Arithmetic in lengths
@@ -339,7 +339,6 @@
 
 %% ─── Copyright page ─────────────────────────────────────────────────────
 \newcommand{\makecopyrightpage}{%
-  \thispagestyle{empty}%
   \sectionunnumberednoclear{Copyright \copyright}%
   \par\vspace{6pt}%
   Copying, storage, and distribution of this work, in whole or in part, for
@@ -359,6 +358,7 @@
 %% ─── Front matter / Main matter ──────────────────────────────────────────
 \newcommand{\frontmatter}{%
   \cleardoublepage
+  \hypersetup{pageanchor=true}%
   \pagenumbering{roman}%
   \pagestyle{fancy}%
 }
