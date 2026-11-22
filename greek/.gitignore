@@ -1,0 +1,28 @@
+# LaTeX build artifacts
+build/
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.lod
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+
+# PDF output (uncomment to track the compiled PDF)
+# *.pdf
+
+# Editor files
+*.swp
+*~
+.vscode/
+
