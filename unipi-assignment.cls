@@ -175,13 +175,32 @@
 \setlength{\cftbeforesubsubsecskip}{0pt}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-%% ─── List of Figures / Tables formatting ─────────────────────────────────
-\renewcommand{\cftfigfont}{\normalfont\fontsize{10}{12}\selectfont}
-\renewcommand{\cfttabfont}{\normalfont\fontsize{10}{12}\selectfont}
-\renewcommand{\cftfigpagefont}{\normalfont\fontsize{10}{12}\selectfont}
-\renewcommand{\cfttabpagefont}{\normalfont\fontsize{10}{12}\selectfont}
-\setlength{\cftbeforefigskip}{0pt}
-\setlength{\cftbeforetabskip}{0pt}
+%% ─── List of Figures / Tables / Diagrams formatting ──────────────────────
+\newcommand{\diagramname}{Diagram}
+
+\renewcommand*\l@figure[2]{%
+  \begingroup
+  \normalfont\fontsize{10}{12}\selectfont
+  \def\numberline##1{\figurename~##1:\enspace}%
+  \@dottedtocline{1}{0pt}{0pt}{#1}{#2}%
+  \endgroup
+}
+
+\renewcommand*\l@table[2]{%
+  \begingroup
+  \normalfont\fontsize{10}{12}\selectfont
+  \def\numberline##1{\tablename~##1:\enspace}%
+  \@dottedtocline{1}{0pt}{0pt}{#1}{#2}%
+  \endgroup
+}
+
+\newcommand*\l@diagram[2]{%
+  \begingroup
+  \normalfont\fontsize{10}{12}\selectfont
+  \def\numberline##1{\diagramname~##1:\enspace}%
+  \@dottedtocline{1}{0pt}{0pt}{#1}{#2}%
+  \endgroup
+}
 
 %% ─── Captions ─────────────────────────────────────────────────────────────
 % Caption: Arial 9pt, bold label, centered
@@ -202,7 +221,6 @@
 % Custom "Diagram" float type
 \newfloat{diagram}{htbp}{lod}[section]
 \floatname{diagram}{Diagram}
-\let\l@diagram\l@figure
 % Clean Front Matter lists with UniPi styling and TOC registration
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\listfigurename}{List of Figures}
@@ -411,18 +429,19 @@
 }
 
 %% ─── Appendix support ───────────────────────────────────────────────────
-\newcounter{appendixcounter}
-\newcommand{\makeappendixheading}[1]{%
-  \stepcounter{appendixcounter}%
-  \phantomsection
-  \addcontentsline{toc}{section}{Appendix \arabic{appendixcounter}}%
-  \vspace*{18pt}%
-  {\normalfont\fontsize{12}{14.4}\headingfont\color{heading1color}%
-    Appendix \arabic{appendixcounter}\ifx&#1&\else: #1\fi}%
-  \par\vspace{1pt}%
-  {\color{heading1color}\rule{\textwidth}{1.5pt}}%
-  \par\vspace{6pt}%
-}
+    \newcounter{appendixcounter}
+    \newcommand{\makeappendixheading}[1]{%
+      \stepcounter{appendixcounter}%
+      \phantomsection
+      \addcontentsline{toc}{section}{\arabic{appendixcounter}.\ifx&#1&\else\
+      #1\fi}%
+      \vspace*{18pt}%
+      {\normalfont\fontsize{12}{14.4}\headingfont\color{heading1color}%
+        \arabic{appendixcounter}.\ifx&#1&\else\ #1\fi}%
+      \par\vspace{1pt}%
+      {\color{heading1color}\rule{\textwidth}{1.5pt}}%
+      \par\vspace{6pt}%
+    }
 
 \endinput
 
